@@ -1,0 +1,15 @@
+P1:	|val	|mV	|DC	|AUTO	|
+	|inf	|V	|AC	|HOLD	|
+	|	|Hz	|NULL	|REL	|
+	|	|kHz	|	|DIODE	|
+	|	|MHz	|	|NULL	|
+	|	|Ω	|	|	|
+	|	|kΩ	|	|	|
+	|	|MΩ	|	|	|
+	|	|µA	|	|	|
+	|	|mA	|	|	|
+	|	|A	|	|	|
+	|	|pF	|	|	|
+	|	|nF	|	|	|
+	|	|mF	|	|	|
+	|	|%	|	|	|
