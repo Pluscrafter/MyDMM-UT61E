@@ -1,15 +1,15 @@
-#include "UT61E.h"
+#include "FLUKE287.h"
 
-UT61E::UT61E(){
-
-}
-
-UT61E::~UT61E(){
+FLUKE287::FLUKE287(){
 
 }
 
-std::string UT61E::getSigrokOut(){
-	std::string cmd = "sigrok-cli --driver=uni-t-ut61e:conn=1a86.e008 --samples 1"; 
+FLUKE287::~FLUKE287(){
+
+}
+
+std::string FLUKE287::getSigrokOut(){
+	std::string cmd = "sigrok-cli --driver=fluke-dmm:conn=/devttyUSB0 -C P2 --samples 1"; 
 	std::string data;
 	FILE * stream;
 	const int max_buffer = 256;
@@ -27,9 +27,9 @@ std::string UT61E::getSigrokOut(){
 	return data; 
 }
 
-std::vector<std::string> UT61E::getSplitOut(){
+std::vector<std::string> FLUKE287::getSplitOut(){
 	std::vector<std::string>data;
-        const std::string cm = UT61E::getSigrokOut();
+        const std::string cm = FLUKE287::getSigrokOut();
         std::stringstream steam(cm);
         std::string dat;
         char deli = ' ';
@@ -43,7 +43,7 @@ std::vector<std::string> UT61E::getSplitOut(){
 	return data;
 }
 
-void UT61E::readValues(std::vector<std::string> dat){
+void FLUKE287::readValues(std::vector<std::string> dat){
 	Amode		= false;
 	Hold		= false;
 	Relative	= false;

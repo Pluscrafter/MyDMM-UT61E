@@ -6,10 +6,10 @@
 #define DC false
 #define AC true
 
-class UT61E{
+class FLUKE287{
 public:
-	UT61E();
-	~UT61E();
+	FLUKE287();
+	~FLUKE287();
 	
 	bool Amode      = false;
         bool Hold       = false;
@@ -21,10 +21,11 @@ public:
         std::string _mmode;
 
         double value;
-	
+
 	enum Mode{
                 voltage, resistance, capacitance,current,diode,frequency
         };
+
         Mode mmode;
 	
 	
