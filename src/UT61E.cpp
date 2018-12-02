@@ -91,3 +91,16 @@ void UT61E::readValues(std::vector<std::string> dat){
 
 }
 
+int UT61E::readTemp(){
+	if (cunit != unit[0]){
+		return -999;
+	}
+	
+	for(int i = 0; i<201; i++){
+		if (value <= mVval[i]){
+			return i+25;
+		}
+	}
+	return -999;
+
+}
