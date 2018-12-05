@@ -8,7 +8,7 @@ int main(int argc, char **argv){
 	UT61E ut;
 	std::ofstream data;
 
-	
+	float etime = 0;
 
 	while(true){
 		auto start = std::chrono::steady_clock::now();
@@ -18,9 +18,10 @@ int main(int argc, char **argv){
 		std::cout << ut.readTemp() << std::endl;
 		auto stop = std::chrono::steady_clock::now();
 		float time = std::chrono::duration_cast<std::chrono::milliseconds>(stop-start).count();
-		std::cout << time/1000 <<std::endl;
+		std::cout << etime/1000 <<std::endl;
+		etime += time;
 		data.open(argv[1], std::ofstream::app);
-		data << time/1000 << "	" << ut.readTemp() << std::endl;
+		data << etime/1000 << ";" << ut.readTemp() << std::endl;
 		data.close();
 		
 
